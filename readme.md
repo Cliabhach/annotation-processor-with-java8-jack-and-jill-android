@@ -1,6 +1,6 @@
 # Android Annotation Processor<br/>With Java8 and Jack&Jill [![CircleCI](https://circleci.com/gh/nickwph/annotation-processor-with-java8-jack-and-jill-android.svg?style=svg)](https://circleci.com/gh/nickwph/annotation-processor-with-java8-jack-and-jill-android)
 
-Just a project to try out Android Annotation Processor in the new Java8 and Jack&Jill enviornment. Also check if libraries and testing frameworks work with it.
+Just a project to try out Android Annotation Processor in the new Java8 and Jack&Jill environment. Also check if libraries and testing frameworks work with it.
 
 First of all, make sure you know what is JACK&JILL. Check this [talk about The Jack and Jill Build System on Youtube](http://www.youtube.com/watch?v=IwklNEYYs2I).
 
@@ -11,7 +11,7 @@ First of all, make sure you know what is JACK&JILL. Check this [talk about The J
 
 #### Libraries
 - [x] Dagger 2.4
-- [x] Dagger 2.5 (`classpath 'com.google.guava:guava:19.0'` needed)
+- [x] Dagger 2.5 (Google Guava 19.0 or higher must be included in buildscript dependencies, e.g. `classpath 'com.google.guava:guava:21.0'`)
 - [x] AutoValue 1.2
 - [x] Butterknife 8.1.0
 - [x] LoganSquare 1.3.6
@@ -27,7 +27,7 @@ First of all, make sure you know what is JACK&JILL. Check this [talk about The J
 ```groovy
 buildscript {
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0-alpha4'
+        classpath 'com.android.tools.build:gradle:2.2.3'
     }
 }
 ```
@@ -35,10 +35,10 @@ buildscript {
 #### /app/build.gradle
 ```groovy
 android {
-    compileSdkVersion 24
-    buildToolsVersion '24.0.0'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
     defaultConfig {
-        targetSdkVersion 24
+        targetSdkVersion 25
         jackOptions {
             enabled true
         }
@@ -156,3 +156,9 @@ Arrays.asList(3, 1, 2).stream()
 - Extra library is needed to work -> `com.google.guava:guava:18.0`.
 - Classes are generated in `build/intermediates/classes/` instead of `build/generated/source/`
 
+#### 2017/1/28 - Switch to more stable releases
+
+- Now that the Java8 Annotation Processor code is stable, we are using `com.android.tools.build:gradle:2.2.3`.
+- Target the latest stable Android Nougat: API 25
+    - This includes changes to `compileSdkVersion`, `buildToolsVersion`, `targetSdkVersion`, and `com.android.support:support-annotations`
+- Switch to latest Gradle wrapper (3.3) from previous (2.14)
