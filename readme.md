@@ -11,7 +11,7 @@ First of all, make sure you know what is JACK&JILL. Check this [talk about The J
 
 #### Libraries
 - [x] Dagger 2.4
-- [x] Dagger 2.5 (Google Guava 19.0 or higher must be included in buildscript dependencies, e.g. `classpath 'com.google.guava:guava:21.0'`)
+- [x] Dagger 2.5 (Google Guava 19.0 or 20.0 (not 21 or higher) must be included in buildscript dependencies, e.g. `classpath 'com.google.guava:guava:20.0'`)
 - [x] AutoValue 1.2
 - [x] Butterknife 8.1.0
 - [x] LoganSquare 1.3.6
